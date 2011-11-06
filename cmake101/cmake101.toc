@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}The quadratic equation}{2}{section.2}
+\contentsline {section}{\numberline {3}Starting up the project}{3}{section.3}
+\contentsline {section}{\numberline {4}\texttt {cmake} setup}{4}{section.4}
+\contentsline {section}{\numberline {5}Building our project}{7}{section.5}
+\contentsline {section}{\numberline {6}Adding tests}{8}{section.6}
+\contentsline {section}{\numberline {7}Adding more tests}{10}{section.7}
+\contentsline {section}{\numberline {8}Exercises}{12}{section.8}
+\contentsline {section}{\numberline {9}\texttt {cmake} for Windows}{13}{section.9}
+\contentsline {section}{\numberline {10}Article revision history}{14}{section.10}
