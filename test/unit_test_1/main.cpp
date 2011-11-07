@@ -15,9 +15,7 @@ int main(int argc, char *argv[])
 			int ret = 0;
 			const double C[3] = {COEFFS[i][0], COEFFS[i][1], COEFFS[i][2]};
 			double roots[4] = {0};
-			const double (*pc)[3] = &C;
-			double (*pr)[4] = &roots;
-			ret = solve_quadratic_eq(pc, pr);
+			ret = solve_quadratic_eq(&C, &roots);
 			printf("ret %d, roots %f %f %f %f\n", ret, COEFFS[i][3], COEFFS[i][4], COEFFS[i][5], COEFFS[i][6]);
 	}
 	return 0;

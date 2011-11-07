@@ -167,22 +167,22 @@ int solve_quadratic_eq(const double (*coeffs)[3], double (*roots)[4])
 	{
 		double d1 = (-(*coeffs)[1]+sqrt(d))/(2.0* (*coeffs)[0]);
 		double d2 = (-(*coeffs)[1]-sqrt(d))/(2.0* (*coeffs)[0]);
-		*roots[0] = d1;
-		*roots[1] = d2;
+		(*roots)[0] = d1;
+		(*roots)[1] = d2;
 	} else if (d < -zero_tol) // complex roots
 	{
 		double r = (-(*coeffs)[1])/(2.0*(*coeffs)[0]);
 		double w = (sqrt(d)/(2.0*(*coeffs)[0]));
-		*roots[0] = r; // first root is x1 = r + iw,
-		*roots[1] = w; // real part is roots[0], imaginary is roots[1]]
-		*roots[2] = r; // second root is x2 = r - iw,
-		*roots[3] = -w; //real part is roots[2], imaginary is roots[2]
+		(*roots)[0] = r; // first root is x1 = r + iw,
+		(*roots)[1] = w; // real part is roots[0], imaginary is roots[1]]
+		(*roots)[2] = r; // second root is x2 = r - iw,
+		(*roots)[3] = -w; //real part is roots[2], imaginary is roots[2]
 		retCode = 1;
 	} else // two identical real roots
 	{
 		double r = (-(*coeffs)[1])/(2.0*(*coeffs)[0]);
-		*roots[0] = r;
-		*roots[1] = r;
+		(*roots)[0] = r;
+		(*roots)[1] = r;
 	} 
 	return retCode;
 }
@@ -353,9 +353,7 @@ int main(int argc, char *argv[])
 			int ret = 0;
 			const double C[3] = {COEFFS[i][0], COEFFS[i][1], COEFFS[i][2]};
 			double roots[4] = {0};
-			const double (*pc)[3] = &C;
-			double (*pr)[4] = &roots;
-			ret = solve_quadratic_eq(pc, pr);
+			ret = solve_quadratic_eq(&C, &roots);
 			printf("ret %d, roots %f %f %f %f\n", ret, 
 				COEFFS[i][3], COEFFS[i][4], COEFFS[i][5], COEFFS[i][6]);
 	}
